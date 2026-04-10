@@ -1,15 +1,23 @@
 {
-  "name": "package",
+  "name": "valorm",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bonanza Narayan",
   "license": "ISC",
-  "description": "",
+  "description": "Valorm is a lightweight TypeScript-first validation library for parsing unknown input into safe, typed data.",
   "devDependencies": {
     "typescript": "^6.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BonanzaNarayan/valorm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BonanzaNarayan/valorm/issues"
+  },
+  "homepage": "https://github.com/BonanzaNarayan/valorm#readme"
 }
