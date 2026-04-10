@@ -1,5 +1,5 @@
-import { Schema } from "./schema";
-import { ParseContext, addIssue } from "./errors";
+import { Schema } from "./schema.js";
+import { type ParseContext, addIssue } from "./errors.js";
 
 // ─── String ───────────────────────────────────────────────────────────────────
 
@@ -98,20 +98,27 @@ export class StringSchema extends Schema<string> {
     return this.min(1, msg ?? "Must not be empty");
   }
 
-  _parse(value: unknown, ctx: ParseContext): string | undefined {
-    let val: unknown = this._coerce ? String(value) : value;
+    _parse(value: unknown, ctx: ParseContext): string | undefined {
+    let val = this._coerce ? String(value) : value;
+
     if (typeof val !== "string") {
       addIssue(ctx, `Expected string, received ${typeof val}`, val);
       return undefined;
     }
-    if (this._trim && typeof val === "string") val = val.trim();
+
+    // ✅ Now TS knows val is string
+    let str = val;
+
+    if (this._trim) str = str.trim();
+
     for (const rule of this._rules) {
-      if (!rule.check(val)) {
-        addIssue(ctx, rule.message, val);
+      if (!rule.check(str)) {
+        addIssue(ctx, rule.message, str);
         return undefined;
       }
     }
-    return val;
+
+    return str;
   }
 }
 

@@ -1,9 +1,9 @@
 import {
   ValidationError,
-  SafeParseResult,
-  ParseContext,
+  type SafeParseResult,
+  type ParseContext,
   addIssue,
-} from "./errors";
+} from "./errors.js";
 
 // ─── Base Schema ──────────────────────────────────────────────────────────────
 // Using `any` in SchemaShape allows Schema<string> to be assignable to Schema<any>,

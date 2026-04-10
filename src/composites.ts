@@ -1,5 +1,5 @@
-import { Schema } from "./schema";
-import { ParseContext, addIssue } from "./errors";
+import { Schema } from "./schema.js";
+import { type ParseContext, addIssue } from "./errors.js";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
