@@ -38,4 +38,5 @@ export const v = {
     discriminatedUnion: (discriminator, options) => new DiscriminatedUnionSchema(discriminator, options),
     intersection: (left, right) => new IntersectionSchema(left, right),
 };
+export default v;
 //# sourceMappingURL=index.js.map

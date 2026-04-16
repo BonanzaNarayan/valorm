@@ -73,3 +73,4 @@ export const v = {
 
 // ─── Infer helper (like Zod's z.infer<typeof schema>) ────────────────────────
 export type Infer<T extends import("./schema.js").Schema<unknown>> = T extends import("./schema.js").Schema<infer U> ? U : never;
+export default v;

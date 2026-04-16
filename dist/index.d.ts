@@ -36,4 +36,5 @@ export declare const v: {
     intersection: <A, B>(left: import("./schema.js").Schema<A>, right: import("./schema.js").Schema<B>) => IntersectionSchema<A, B>;
 };
 export type Infer<T extends import("./schema.js").Schema<unknown>> = T extends import("./schema.js").Schema<infer U> ? U : never;
+export default v;
 //# sourceMappingURL=index.d.ts.map
